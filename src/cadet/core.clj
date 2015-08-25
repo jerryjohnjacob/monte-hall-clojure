@@ -2,7 +2,7 @@
   (:gen-class))
 
 (defn parse-int [n]
-  (Integer. (re-find  #"\d+" n )))
+  (Integer/parseInt n))
 
 (defn stay-is-best? [good-option initial-choice]
   (== good-option initial-choice))
