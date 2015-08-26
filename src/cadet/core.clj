@@ -1,23 +1,26 @@
 (ns cadet.core
   (:gen-class))
 
-(def results [])
-
 (defn parse-int [n]
   (Integer/parseInt n))
 
 (defn stay-is-best? [good-option initial-choice]
   (== good-option initial-choice))
 
-(defn run-monte-carlo [n]
-  (def results (into results (if (stay-is-best? (rand-int n)
-                                   (rand-int n))
-                  ["Stay"]
-                  ["Change"]
-                  )))
+(defn run-monte-carlo [number-of-options iterations current-results]
+  (if (== iterations 0)
+    current-results
+    (run-monte-carlo number-of-options
+                     (- iterations 1)
+                     (into current-results (if (stay-is-best? (rand-int number-of-options)
+                                                              (rand-int number-of-options))
+                                             ["Stay"]
+                                             ["Change"]
+                                             ))))
   )
 
 (defn -main
   [& args]
-  (dotimes [n (parse-int (nth args 1))] (run-monte-carlo (parse-int (first args))))
-  (println (frequencies results)))
+  (println (frequencies (run-monte-carlo (parse-int (first args))
+                                         (parse-int (nth args 1))
+                                         []))))
