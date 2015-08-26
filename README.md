@@ -1,36 +1,7 @@
-# cadet
+# Monte Hall Problem Solution in Clojure
 
-FIXME: description
+A basic solution illustrating the solution to the probability problem that is the Monty Hall Problem:
 
-## Installation
+Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, "Do you want to pick door No. 2?" Is it to your advantage to switch your choice?
 
-Download from http://example.com/FIXME.
-
-## Usage
-
-FIXME: explanation
-
-    $ java -jar cadet-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2015 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+The Monty Hall Problem talks of 3 choices. This solution will help illustrate the drastic change in the possibility of making the right choice after switching as the number of choices increases.
